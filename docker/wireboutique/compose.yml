@@ -1,0 +1,31 @@
+services:
+  httpd:
+    image: httpd:2.4.63
+    restart: always
+    volumes:
+      - ./httpd/conf/httpd.conf:/usr/local/apache2/conf/httpd.conf
+    ports:
+      - "8080:80"
+  tomcat:
+    build: ./tomcat
+    restart: always
+    volumes:
+      - ./tomcat/conf/server.xml:/usr/local/tomcat/conf/server.xml
+      - ./tomcat/webapps:/usr/local/tomcat/webapps
+    ports:
+      - "8009:8009"
+  mysql:
+    image: mysql:9.3.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: permer
+      MYSQL_DATABASE: wireboutique
+      MYSQL_USER: app_wireboutique
+      MYSQL_PASSWORD: wire8Pass
+      TZ: Asia/Tokyo
+    volumes:
+      - ./mysql/initdb.d:/docker-entrypoint-initdb.d
+      - ./mysql/data:/var/lib/mysql
+      - ./mysql/conf/my.conf:/etc/mysql/conf.d/my.cnf
+    ports:
+      - "3306:3306"

@@ -1,0 +1,94 @@
+@charset "UTF-8";
+
+.section-title{
+	font-size: 1.3em;
+	font-weight: normal;
+	margin: 8px;
+}
+
+.section-heading{
+	font-size: 1.1em;
+	font-weight: normal;
+	margin: 8px;
+	border-bottom: 1px solid #ebebeb;
+}
+
+.service-mgr-content{
+	width: 50%;
+	max-width: 726px;
+	background: rgb(255, 255, 255);
+	margin: 0.5em;
+}
+
+.service-mgr-index-heading{
+	width: 100%;
+	color: #ffffff;
+	background-color: #626262;
+}
+
+.service-mgr-index-menu{
+	width: 100%
+}
+
+.service-mgr-index-menu .card-wrapper{
+	display: flex;
+    flex-flow: row wrap;
+    justify-content: start;
+}
+
+.service-mgr-index-menu .card-style{
+	width: calc(25% - 6px);
+	min-width: 192px;
+	height: 108px;
+	background-color: #FFFFFF;
+    margin:3px 3px;
+    justify-content: center;
+    border: 1px solid #5f5f5f21;
+}
+
+#show-user button{
+	display: inline-block;
+}
+
+.role-list-button{
+	text-align: center;
+}
+
+.role-list-button .button{
+	display: inline-block;
+}
+
+#product-list-table{
+    overflow: scroll;
+}
+
+.product-list-img{
+	display: block;
+	width: 75px;
+	object-fit: contain;
+}
+
+#role-editing-form{
+	width: 90%;
+	padding:8px 16px;
+	    margin: 24px 0;
+    background: #fbfbfb;
+}
+
+#role-editing-form .form-heading{
+	border-bottom: 1px solid #cbcbcb;
+	margin: 0.5em 0;
+}
+
+#role-editing-form .form-item{
+	font-size: 0.9em;
+}
+
+#role-editing-form .table-style-list thead th{
+    padding: 0 8px;
+    text-align: center;
+}
+
+#role-editing-form .table-style-list tbody td{
+    text-align: center;
+}

@@ -1,0 +1,444 @@
+﻿# A5:ER FORMAT:19
+# A5:ER ENCODING:UTF8
+# A5:ER Mk-1 Copyright © 2007 m.matsubara
+# A5:SQL Mk-2 Version 2.20.1 Copyright © 1997 - 2025 m.matsubara
+#  https://a5m2.mmatsubara.com
+
+[Manager]
+ProjectName=
+Author=
+MaxEntityRowShow=1000
+ReadOnlyRecommend=0
+Page=Main
+PageInfo="Main",2,"A3Landscape",$FFFFFF
+LogicalView=1
+DecodeDomain=0
+ViewModePageIndividually=1
+ViewMode=2
+ViewFormat=0
+UseNondependenceDashLine=0
+FontName=Tahoma
+FontSize=6
+PaperSize=A4Landscape
+HeaderLeft=
+HeaderCenter=
+HeaderRight=
+FooterLeft=
+FooterCenter=
+FooterRight=
+ShowPageoutRelation=1
+DefaultPkName=%0:s_PKC
+DefaultPkIndexName=%0:s_PKI
+DefaultIndexName=%0:s_IX%1:d
+DefaultFkName=%0:s_FK%1:d
+SqlSeparator=0
+UpperCaseKeyword=0
+ShowTag=1
+ShowCommonAttributes=0
+BugFixEntityWidth=1
+
+[Relation]
+Entity1=products
+Entity2=tax_categories
+RelationType1=4
+RelationType2=2
+Fields1=TAX_CATEGORY_ID
+Fields2=TAX_CATEGORY_ID
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,8412,8185,5074,R,R,""
+Dependence=0
+Caption=
+PName=
+ModifiedDateTime=20250204142102
+LineMode=0
+Bar1=841
+Bar2=818
+Bar3=507
+TermPos1=R
+TermPos2=R
+ZOrder=0
+
+[Relation]
+Entity1=manufacturers
+Entity2=products
+RelationType1=2
+RelationType2=4
+Fields1=MANUFACTURER_ID
+Fields2=MANUFACTURER_ID
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,2820,8313,3874,R,R,""
+Dependence=0
+Caption=
+PName=
+ModifiedDateTime=20250127125551
+LineMode=0
+Bar1=282
+Bar2=831
+Bar3=387
+TermPos1=R
+TermPos2=R
+ZOrder=1
+
+[Relation]
+Entity1=categories
+Entity2=products
+RelationType1=2
+RelationType2=4
+Fields1=CATEGORY_ID
+Fields2=CATEGORY_ID
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,3565,8582,2790,R,R,""
+Dependence=0
+Caption=
+PName=
+ModifiedDateTime=20250127125804
+LineMode=0
+Bar1=356
+Bar2=858
+Bar3=279
+TermPos1=R
+TermPos2=R
+ZOrder=2
+
+[Entity]
+PName=categories
+LName=categories
+Comment=
+TableInnerOption=
+TableOption=
+Page=MAIN
+Left=2250
+Top=350
+Field="CATEGORY_ID","CATEGORY_ID","int(11)","NOT NULL",0,"","",$FFFFFFFF,""
+Field="CATEGORY","CATEGORY","varchar(30)","NOT NULL",,"","",$FFFFFFFF,""
+Index==2,CATEGORY
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+Position="MAIN",2250,350
+ZOrder=-1
+
+[Entity]
+PName=manufacturers
+LName=manufacturers
+Comment=
+TableInnerOption=
+TableOption=
+Page=MAIN
+Left=2250
+Top=500
+Field="MANUFACTURER_ID","MANUFACTURER_ID","int(11)","NOT NULL",0,"","",$FFFFFFFF,""
+Field="MANUFACTURER","MANUFACTURER","varchar(50)","NOT NULL",,"","",$FFFFFFFF,""
+Index==2,MANUFACTURER
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+Position="MAIN",2250,500
+ZOrder=-2
+
+[Entity]
+PName=products
+LName=products
+Comment=
+TableInnerOption=
+TableOption=
+Page=MAIN
+Left=1800
+Top=350
+Field="PRODUCT_ID","PRODUCT_ID","int(10)","NOT NULL",0,"0","",$FFFFFFFF,""
+Field="UPDATED_AT","UPDATED_AT","datetime on update CURRENT_TIMESTAMP","NOT NULL",,"current_timestamp()","",$FFFFFFFF,""
+Field="CREATED_AT","CREATED_AT","datetime","NOT NULL",,"current_timestamp()","",$FFFFFFFF,""
+Field="NAME","NAME","text","NOT NULL",,"\q\qUNNAMED\q\q","",$FFFFFFFF,""
+Field="CATEGORY_ID","CATEGORY_ID","int(11)","NOT NULL",,"","",$FFFFFFFF,""
+Field="MANUFACTURER_ID","MANUFACTURER_ID","int(11)","NOT NULL",,"","",$FFFFFFFF,""
+Field="LIST_PRICE","LIST_PRICE","decimal(10,2)","NOT NULL",,"\q0.00\q","",$FFFFFFFF,""
+Field="RELEASE_DATE","RELEASE_DATE","date","NOT NULL",,"\q1900-01-01\q","",$FFFFFFFF,""
+Field="CONTENTS","CONTENTS","text",,,"","",$FFFFFFFF,""
+Field="TAX_CATEGORY_ID","TAX_CATEGORY_ID","tinyint(4)","NOT NULL",,"0","",$FFFFFFFF,""
+Field="STOCK","STOCK","int(11)",,,"0","",$FFFFFFFF,""
+Field="IS_PUBLIC","IS_PUBLIC","tinyint(1)","NOT NULL",,"","",$FFFFFFFF,""
+Index==2,PRODUCT_ID
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+Position="MAIN",1800,350
+ZOrder=-3
+
+[Entity]
+PName=tax_categories
+LName=tax_categories
+Comment=
+TableInnerOption=
+TableOption=
+Page=MAIN
+Left=2200
+Top=600
+Field="TAX_CATEGORY_ID","TAX_CATEGORY_ID","tinyint(4)","NOT NULL",0,"","",$FFFFFFFF,""
+Field="TAX_NAME","TAX_NAME","varchar(50)","NOT NULL",,"","",$FFFFFFFF,""
+Field="TAX_RATE","TAX_RATE","decimal(4,2)","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20250128134110
+Position="MAIN",2200,600
+ZOrder=-4
+
+[Entity]
+PName=users
+LName=users
+Comment=
+TableInnerOption=
+TableOption=
+Page=MAIN
+Left=600
+Top=450
+Field="USER_ID","USER_ID","varchar(32)","NOT NULL",0,"","",$FFFFFFFF,""
+Field="PASSWORD","PASSWORD","varchar(100)","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+Position="MAIN",600,450
+ZOrder=-5
+
+[Entity]
+PName=orders
+LName=orders
+Comment=
+TableInnerOption=
+TableOption=
+Page=MAIN
+Left=900
+Top=500
+Field="ORDER_ID","ORDER_ID","varchar(26)","NOT NULL",0,"","",$FFFFFFFF,""
+Field="TOTAL_PRICE","TOTAL_PRICE","decimal(11,2)","NOT NULL",,"","",$FFFFFFFF,""
+Field="ORDER_DATE","ORDER_DATE","datetime","NOT NULL",,"\q1900-01-01 00:00:00\q","",$FFFFFFFF,""
+Field="PAYMENT_STATE","PAYMENT_STATE","varchar(30)","NOT NULL",,"","",$FFFFFFFF,""
+Field="PAYMENT_METHODE","PAYMENT_METHODE","varchar(30)","NOT NULL",,"","",$FFFFFFFF,""
+Field="USER_ID","USER_ID","varchar(32)","NOT NULL",,"","",$FFFFFFFF,""
+Field="PURCHASER","PURCHASER","varchar(32)","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20250213111116
+Position="MAIN",900,500
+ZOrder=3
+
+[Entity]
+PName=order_details
+LName=order_details
+Comment=
+TableInnerOption=
+TableOption=
+Page=MAIN
+Left=1200
+Top=300
+Field="ORDER_ID","ORDER_ID","varchar(26)","NOT NULL",,"","",$FFFFFFFF,""
+Field="PRODUCT_ID","PRODUCT_ID","int(11)","NOT NULL",,"","",$FFFFFFFF,""
+Field="PRODUCT_NAME","PRODUCT_NAME","text","NOT NULL",,"","",$FFFFFFFF,""
+Field="PURCHASE_PRICE","PURCHASE_PRICE","decimal(11,2)","NOT NULL",,"","",$FFFFFFFF,""
+Field="QUANTITY","QUANTITY","int(11)","NOT NULL",,"","",$FFFFFFFF,""
+Field="TAX_RATE","TAX_RATE","decimal(4,2)","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+Position="MAIN",1200,300
+ZOrder=4
+
+[Relation]
+Entity1=orders
+Entity2=order_details
+RelationType1=2
+RelationType2=4
+Fields1=ORDER_ID
+Fields2=ORDER_ID
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,1005,5732,1056,R,R,""
+Dependence=0
+Caption=
+PName=
+ModifiedDateTime=20250204142326
+LineMode=0
+Bar1=100
+Bar2=573
+Bar3=106
+TermPos1=R
+TermPos2=R
+ZOrder=7
+
+[Relation]
+Entity1=orders
+Entity2=users
+RelationType1=3
+RelationType2=4
+Fields1=USER_ID
+Fields2=USER_ID
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,5524,6597,3783,R,R,""
+Dependence=0
+Caption=
+PName=
+ModifiedDateTime=20250204142515
+LineMode=0
+Bar1=552
+Bar2=660
+Bar3=378
+TermPos1=R
+TermPos2=R
+ZOrder=8
+
+[Entity]
+PName=admin_users
+LName=admin_users
+Comment=
+TableInnerOption=
+TableOption=
+Page=MAIN
+Left=750
+Top=1000
+Field="ADMIN_USER_ID","ADMIN_USER_ID","varchar(32)","NOT NULL",0,"","",$FFFFFFFF,""
+Field="PASSWORD","PASSWORD","varchar(100)","NOT NULL",,"","",$FFFFFFFF,""
+Field="ROLE_ID","ROLE_ID","smallint(11)","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+Position="MAIN",750,1000
+ZOrder=11
+
+[Entity]
+PName=admin_user_roles
+LName=admin_user_roles
+Comment=
+TableInnerOption=
+TableOption=
+Page=MAIN
+Left=1100
+Top=1050
+Field="ROLE_ID","ROLE_ID","smallint(6)","NOT NULL",0,"","",$FFFFFFFF,""
+Field="ROLE_NAME","ROLE_NAME","varchar(32)","NOT NULL",,"","",$FFFFFFFF,""
+Index==2,ROLE_NAME
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+Position="MAIN",1100,1050,141,50
+ZOrder=14
+
+[Relation]
+Entity1=admin_user_roles
+Entity2=admin_users
+RelationType1=2
+RelationType2=3
+Fields1=ROLE_ID
+Fields2=ROLE_ID
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,3489,4915,8851,R,R,""
+Dependence=0
+Caption=
+PName=
+ModifiedDateTime=20250227141658
+LineMode=0
+Bar1=349
+Bar2=492
+Bar3=885
+TermPos1=R
+TermPos2=R
+ZOrder=15
+
+[Entity]
+PName=admin_user_permissions
+LName=admin_user_permissions
+Comment=
+TableInnerOption=
+TableOption=
+Page=MAIN
+Left=1400
+Top=1050
+Field="ROLE_ID","ROLE_ID","smallint(6)","NOT NULL",0,"","",$FFFFFFFF,""
+Field="ENTER_SERVICE_MGR","ENTER_SERVICE_MGR","tinyint(1)","NOT NULL",,"0","",$FFFFFFFF,""
+Field="EDIT_ADMIN_USER_PERMISSIONS","EDIT_ADMIN_USER_PERMISSIONS","tinyint(1)","NOT NULL",,"0","",$FFFFFFFF,""
+Field="MANAGE_PRODUCT_DATA","MANAGE_PRODUCT_DATA","tinyint(1)","NOT NULL",,"0","",$FFFFFFFF,""
+Field="MANAGE_PRODUCT_RESOURCE","MANAGE_PRODUCT_RESOURCE","tinyint(1)","NOT NULL",,"0","",$FFFFFFFF,""
+Field="ADD_PRODUCT","ADD_PRODUCT","tinyint(1)","NOT NULL",,"0","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20250508140713
+Position="MAIN",1400,1050
+ZOrder=18
+
+[Relation]
+Entity1=admin_user_roles
+Entity2=admin_user_permissions
+RelationType1=2
+RelationType2=2
+Fields1=ROLE_ID
+Fields2=ROLE_ID
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,3254,3624,1281,R,R,""
+Dependence=0
+Caption=
+PName=
+ModifiedDateTime=20250228115354
+LineMode=0
+Bar1=325
+Bar2=362
+Bar3=128
+TermPos1=R
+TermPos2=R
+ZOrder=20
+
+[Entity]
+PName=product_logs
+LName=product_logs
+Comment=
+TableInnerOption=
+TableOption=
+Page=MAIN
+Left=1450
+Top=500
+Field="PRODUCT_LOG_ID","PRODUCT_LOG_ID","bigint(20)","NOT NULL",0,"0","",$FFFFFFFF,""
+Field="PRODUCT_ID","PRODUCT_ID","int(10)","NOT NULL",,"0","",$FFFFFFFF,""
+Field="UPDATED_AT","UPDATED_AT","datetime","NOT NULL",,"\q1970-01-01 00:00:00\q","",$FFFFFFFF,""
+Field="NAME","NAME","text","NOT NULL",,"\q\qUNNAMED\q\q","",$FFFFFFFF,""
+Field="CATEGORY_ID","CATEGORY_ID","int(11)","NOT NULL",,"","",$FFFFFFFF,""
+Field="MANUFACTURER_ID","MANUFACTURER_ID","int(11)","NOT NULL",,"","",$FFFFFFFF,""
+Field="LIST_PRICE","LIST_PRICE","decimal(10,2)","NOT NULL",,"\q0.00\q","",$FFFFFFFF,""
+Field="RELEASE_DATE","RELEASE_DATE","date","NOT NULL",,"\q1900-01-01\q","",$FFFFFFFF,""
+Field="CONTENTS","CONTENTS","text",,,"","",$FFFFFFFF,""
+Field="TAX_CATEGORY_ID","TAX_CATEGORY_ID","tinyint(4)","NOT NULL",,"0","",$FFFFFFFF,""
+Field="STOCK","STOCK","int(11)",,,"0","",$FFFFFFFF,""
+Field="IS_PUBLIC","IS_PUBLIC","tinyint(1)","NOT NULL",,"","",$FFFFFFFF,""
+Index==0,PRODUCT_ID
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+Position="MAIN",1450,500
+ZOrder=22
+
+[Relation]
+Entity1=products
+Entity2=product_logs
+RelationType1=2
+RelationType2=4
+Fields1=PRODUCT_ID
+Fields2=PRODUCT_ID
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,376,7198,423,R,R,""
+Dependence=0
+Caption=
+PName=
+ModifiedDateTime=20250415133558
+LineMode=0
+Bar1=38
+Bar2=720
+Bar3=42
+TermPos1=R
+TermPos2=R
+ZOrder=23
