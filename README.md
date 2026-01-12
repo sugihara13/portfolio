@@ -4,8 +4,8 @@
 ECサイト(オンラインショップ)を模したポートフォリオ  
 
 公開URL:  
-  - ECサイト: [https://www.wireboutique.net/Index](https://www.wireboutique.net/Index)   
-  - 管理ページログインフォーム: [https://www.wireboutique.net/AdminUserAuthentication](https://www.wireboutique.net/AdminUserAuthentication)  
+  - ECサイト: 公開終了
+  - 管理ページログインフォーム: 公開終了
 
 管理ページについては　[管理ページ - ServiceManagerについて](#管理ページ---servicemanagerについて)をご参照下さい。
 
